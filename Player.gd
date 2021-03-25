@@ -31,4 +31,6 @@ func handle_movement():
             
     var _a = move_and_slide(velocity * speed)
     
+func hit():
+    queue_free()
     

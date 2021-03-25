@@ -9,7 +9,6 @@ var power = 2
 
 onready var raycasts = get_node("raycasts").get_children()
 
-
 func _ready():
     for raycast in raycasts:
         raycast.cast_to = raycast.cast_to * power * 32
@@ -21,17 +20,11 @@ func _physics_process(delta):
         explode()
         queue_free()
 
-
 func explode():
     for raycast in raycasts:
-        raycast.cast_to *= power * 32
-        print(raycast.cast_to)
         var colliding = raycast.get_collider()
-        print(raycast.is_colliding())
-        if(colliding and colliding.has_method("explode")):
-            colliding.explode()
-           
+        if(colliding and colliding.has_method("hit")):
+            colliding.hit()
 
 func _on_Area2D_body_exited(_body):
-
     collider.set_deferred("disabled",false)
