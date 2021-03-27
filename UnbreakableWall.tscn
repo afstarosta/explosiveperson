@@ -3,7 +3,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[node name="UnbreakableWall" type="StaticBody2D"]
+[node name="UnbreakableWall" type="StaticBody2D" groups=[
+"wall",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 16, 16 )
