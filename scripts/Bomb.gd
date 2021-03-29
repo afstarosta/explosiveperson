@@ -54,6 +54,6 @@ func explosion_effect(from_position:Vector2, to_position:Vector2):
     print(explosion_position.distance_to(from_position))
     while explosion_position.distance_to(to_position) >= 1:
         
-        explosionController.create_explosion(explosion_position)
+        explosionController.simple_explosion(explosion_position)
         explosion_position += direction
     
