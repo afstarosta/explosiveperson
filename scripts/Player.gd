@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const speed = 100
 
-onready var bomb_scene:PackedScene = load("res://Bomb.tscn")
+onready var bomb_scene:PackedScene = load("res://scenes/player/Bomb.tscn")
 
 func _physics_process(_delta):
     handle_movement()

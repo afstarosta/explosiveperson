@@ -2,8 +2,8 @@ extends Node2D
 
 onready var FGTilemap:TileMap = $FG
 
-onready var unbreakable_wall_scene:PackedScene = load("res://UnbreakableWall.tscn")
-onready var breakable_wall_scene:PackedScene = load("res://BreakableWall.tscn")
+onready var unbreakable_wall_scene:PackedScene = load("res://scenes/tiles/UnbreakableWall.tscn")
+onready var breakable_wall_scene:PackedScene = load("res://scenes/tiles/BreakableWall.tscn")
 
 
 func _ready():
