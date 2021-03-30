@@ -5,8 +5,10 @@ onready var FGTilemap:TileMap = $FG
 onready var unbreakable_wall_scene:PackedScene = load("res://scenes/tiles/UnbreakableWall.tscn")
 onready var breakable_wall_scene:PackedScene = load("res://scenes/tiles/BreakableWall.tscn")
 
+var TILE_SIZE
 
 func _ready():
+    GameSettings.TILE_SIZE = FGTilemap.get_cell_size()   
     var cells = FGTilemap.get_used_cells_by_id(0)
     create_unbreakable_walls(cells)
     cells = FGTilemap.get_used_cells_by_id(1)

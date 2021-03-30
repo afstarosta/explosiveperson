@@ -19,6 +19,10 @@ config/name="bomberperson"
 run/main_scene="res://scenes/game/Main.tscn"
 config/icon="res://sprites/icon.png"
 
+[autoload]
+
+GameSettings="*res://scripts/GameSettings.gd"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

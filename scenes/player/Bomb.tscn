@@ -10,43 +10,36 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 0.823529, 0, 0, 1 )
-position = Vector2( 16, 16 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 16, 16 )
 shape = SubResource( 1 )
 
 [node name="raycasts" type="Node2D" parent="."]
 
 [node name="up" type="RayCast2D" parent="raycasts"]
-position = Vector2( 16, 16 )
 enabled = true
 cast_to = Vector2( 0, -1 )
 collide_with_areas = true
 
 [node name="down" type="RayCast2D" parent="raycasts"]
-position = Vector2( 16, 16 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 collide_with_areas = true
 
 [node name="left" type="RayCast2D" parent="raycasts"]
-position = Vector2( 16, 16 )
 enabled = true
 cast_to = Vector2( -1, 0 )
 collide_with_areas = true
 
 [node name="right" type="RayCast2D" parent="raycasts"]
-position = Vector2( 16, 16 )
 enabled = true
 cast_to = Vector2( 1, 0 )
 collide_with_areas = true

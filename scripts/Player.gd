@@ -2,21 +2,11 @@ extends KinematicBody2D
 
 const speed = 100
 
-onready var bomb_scene:PackedScene = load("res://scenes/player/Bomb.tscn")
+
+onready var bomb_container:Node2D = get_parent().get_node("BombContainer")
 
 func _physics_process(_delta):
     handle_movement()
-    handle_action()
-    
-func handle_action():
-    if Input.is_action_just_pressed("ui_accept"):
-        plant_bomb()
-
-func plant_bomb():
-    var bomb = bomb_scene.instance()
-   
-    bomb.position = Vector2(round(self.position.x / 32) * 32, round(self.position.y / 32) * 32)
-    get_parent().call_deferred("add_child", bomb)
     
 func handle_movement():
     var velocity = Vector2(0, 0)
