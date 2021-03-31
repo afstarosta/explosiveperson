@@ -21,8 +21,8 @@ one_way_collision = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PlayerBody"]
 frames = ExtResource( 2 )
-animation = "w_front"
-frame = 1
+animation = "dead"
+frame = 5
 playing = true
 
 [node name="PlayerBomb" type="Node2D" parent="."]

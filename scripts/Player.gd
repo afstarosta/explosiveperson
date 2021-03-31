@@ -28,7 +28,9 @@ func handle_movement():
     set_animation(velocity)
 
 func hit():
-    queue_free()
+    sprite.animation = "dead"
+    set_physics_process(false)
+    
 
 func set_animation(velocity: Vector2):
     if(velocity.length() == 0):
