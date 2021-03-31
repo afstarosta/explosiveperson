@@ -11,5 +11,7 @@ func _physics_process(delta):
 func plant_bomb():
     var bomb = bomb_scene.instance()
    
-    bomb.position = Vector2(round(player_body.position.x / GameSettings.TILE_SIZE.x) * GameSettings.TILE_SIZE.x, round(player_body.position.y / GameSettings.TILE_SIZE.y) * GameSettings.TILE_SIZE.y)
+    var tileset_coords = GameSettings.level.FGTilemap.world_to_map(player_body.global_position)
+
     add_child(bomb)
+    bomb.global_position = (tileset_coords * GameSettings.TILE_SIZE.x) + GameSettings.TILE_SIZE/2

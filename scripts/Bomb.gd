@@ -12,9 +12,9 @@ onready var raycasts = get_node("raycasts").get_children()
 
 func _ready():
     explosionController = get_node("/root/Main/explosionController")
-    print(get_tree().get_root().get_children())
+
     for raycast in raycasts:
-        raycast.cast_to = raycast.cast_to * power * 32
+        raycast.cast_to = raycast.cast_to * power * GameSettings.TILE_SIZE.x
     
 func _physics_process(delta):
     timer += delta
@@ -36,7 +36,7 @@ func explode():
             
             if(colliding.is_in_group("wall")):
                 raycast.enabled = false
-                explosion_edge = colliding.position + Vector2(16,16)
+                explosion_edge = colliding.position + GameSettings.TILE_SIZE/2
                 break
                 
             raycast.add_exception(colliding)
