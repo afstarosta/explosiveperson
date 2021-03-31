@@ -6,7 +6,8 @@ onready var sprite:AnimatedSprite = $AnimatedSprite
 var direction = "front"
 
 func _physics_process(_delta):
-    handle_movement()
+    if(get_parent().active):
+        handle_movement()
     
 func handle_movement():
     var velocity = Vector2(0, 0)
@@ -30,7 +31,7 @@ func handle_movement():
 func hit():
     sprite.animation = "dead"
     set_physics_process(false)
-    
+    get_parent().deactivate()
 
 func set_animation(velocity: Vector2):
     if(velocity.length() == 0):

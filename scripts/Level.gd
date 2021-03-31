@@ -30,4 +30,6 @@ func create_breakable_walls(cells):
         wall.position = Vector2(cell.x * FGTilemap.cell_size.x, cell.y * FGTilemap.cell_size.y)
         wall.cell_coord = cell
         wall.tilemap = FGTilemap
-    
+
+func get_spawn_points():
+    return get_node("SpawnPoints").get_children()

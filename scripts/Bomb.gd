@@ -51,7 +51,6 @@ func explosion_effect(from_position:Vector2, to_position:Vector2):
     var direction = from_position.direction_to(to_position)
     var explosion_position = from_position
 
-    print(explosion_position.distance_to(from_position))
     while explosion_position.distance_to(to_position) >= 1:
         
         explosionController.simple_explosion(explosion_position)
