@@ -11,18 +11,17 @@ func _physics_process(_delta):
         handle_movement()
     
 func handle_movement():
-    print(parent.joypad_device_id)
     var velocity = Vector2(0, 0)
-    if Input.is_joy_button_pressed(parent.joypad_device_id, JOY_DPAD_UP):
+    if Input.is_action_pressed("ui_up_" + str(parent.id)):
         velocity.y = -1
         direction = "back"
-    if Input.is_joy_button_pressed(parent.joypad_device_id, JOY_DPAD_DOWN):
+    if Input.is_action_pressed("ui_down_" + str(parent.id)):
         velocity.y = 1 
         direction = "front"
-    if Input.is_joy_button_pressed(parent.joypad_device_id, JOY_DPAD_LEFT):
+    if Input.is_action_pressed("ui_left_" + str(parent.id)):
         velocity.x = -1
         direction = "left"
-    if Input.is_joy_button_pressed(parent.joypad_device_id, JOY_DPAD_RIGHT):
+    if Input.is_action_pressed("ui_right_" + str(parent.id)):
         velocity.x = 1
         direction = "right"
             

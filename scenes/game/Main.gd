@@ -5,15 +5,40 @@ var players = []
 var player_devices = []
 var game_running = false
 
-func spawn_player(player_id):    
-    var spawn_points = $Level.get_spawn_points()
-    var player = player_scene.instance()
-    $Players.add_child(player)
-    player.position = spawn_points[len(players)].global_position
-    player.joypad_device_id = player_id
-    players.append(player)
-    player_devices.append(player_id)
-    player.activate()
+onready var start_screen_scene:PackedScene = load("res://screens/StartScreen.tscn")
+var start_screen
+
+onready var lobby_screen_scene:PackedScene = load("res://screens/LobbyScreen.tscn")
+var lobby_screen
+
+onready var level_scene:PackedScene = load("res://scenes/game/Level.tscn")
+var level
+
+func _ready():
+    start_screen = start_screen_scene.instance()
+    add_child(start_screen)
+
+func start_game():
+    start_screen.queue_free()
+    lobby_screen = lobby_screen_scene.instance()
+    add_child(lobby_screen)
+
+func start_match(players):    
+    lobby_screen.queue_free()
+    level = level_scene.instance()
+    add_child(level)
+    
+    for player_slot in range(len(players)):
+        var spawn_points = level.get_spawn_points()
+        var player = player_scene.instance()
+        $Players.add_child(player)
+        player.position = spawn_points[player_slot].global_position
+        player.joypad_device_id = players[player_slot]
+        player.id = player_slot
+        players.append(player)
+        player_devices.append(players[player_slot])
+        GameSettings.map_player_input(player.id, player.joypad_device_id)
+        player.activate()
 
 func _physics_process(delta):
     if(len(players) > 1):
@@ -36,11 +61,4 @@ func count_active_players():
         if(player.active):
             count += 1
     return count
-
-func _input(event):
-    if !game_running && (event is InputEventJoypadButton):
-        if(player_devices.find(event.device) == -1):
-            spawn_player(event.device)
-        
-        
 

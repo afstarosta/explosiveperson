@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/LobbyScreen.gd" type="Script" id=1]
+[ext_resource path="res://scripts/PlayerReadyBox.gd" type="Script" id=2]
+
+[node name="LobbyScreen" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 338.087
+margin_top = 255.0
+margin_right = 480.087
+margin_bottom = 295.0
+text = "PRESS START TO JOIN
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerBoxes" type="Node2D" parent="."]
+
+[node name="Player1" type="PanelContainer" parent="PlayerBoxes"]
+margin_left = 65.0
+margin_top = 66.0
+margin_right = 256.0
+margin_bottom = 255.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ready" type="RichTextLabel" parent="PlayerBoxes/Player1"]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 184.0
+margin_bottom = 182.0
+text = "READY
+"
+
+[node name="Player2" type="PanelContainer" parent="PlayerBoxes"]
+margin_left = 583.721
+margin_top = 66.0
+margin_right = 774.721
+margin_bottom = 255.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ready" type="RichTextLabel" parent="PlayerBoxes/Player2"]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 184.0
+margin_bottom = 182.0
+text = "READY"
+
+[node name="Player3" type="PanelContainer" parent="PlayerBoxes"]
+margin_left = 65.0
+margin_top = 332.568
+margin_right = 256.0
+margin_bottom = 521.568
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ready" type="RichTextLabel" parent="PlayerBoxes/Player3"]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 184.0
+margin_bottom = 182.0
+text = "READY"
+
+[node name="Player4" type="PanelContainer" parent="PlayerBoxes"]
+margin_left = 583.721
+margin_top = 332.568
+margin_right = 774.721
+margin_bottom = 521.568
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ready" type="RichTextLabel" parent="PlayerBoxes/Player4"]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 184.0
+margin_bottom = 182.0
+text = "READY"
