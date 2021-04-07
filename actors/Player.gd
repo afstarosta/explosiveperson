@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 var active = false
 var joypad_device_id

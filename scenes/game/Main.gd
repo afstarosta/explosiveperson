@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var player_scene:PackedScene = load("res://scenes/player/Player.tscn")
+onready var player_scene:PackedScene = load("res://actors/Player.tscn")
 var players = []
 var player_devices = []
 var game_running = false
