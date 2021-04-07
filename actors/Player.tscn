@@ -6,9 +6,11 @@
 [ext_resource path="res://sprites/player_anim.tres" type="SpriteFrames" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 47.0
+radius = 27.3763
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 z_index = 1
 script = ExtResource( 1 )
 
@@ -25,6 +27,5 @@ one_way_collision = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 4 )
-animation = "dead"
-frame = 5
+animation = "i_front"
 playing = true

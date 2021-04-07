@@ -9,3 +9,7 @@ func activate():
     
 func deactivate():
     active = false
+
+func hit():
+    $AnimatedSprite.animation = "dead"
+    deactivate()

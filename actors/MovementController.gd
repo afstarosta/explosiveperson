@@ -28,11 +28,6 @@ func handle_movement():
     parent.move_and_slide(velocity * speed)
     set_animation(velocity)
 
-func hit():
-    sprite.animation = "dead"
-    set_physics_process(false)
-    get_parent().deactivate()
-
 func set_animation(velocity: Vector2):
     if(velocity.length() == 0):
         sprite.animation = "i_" + direction

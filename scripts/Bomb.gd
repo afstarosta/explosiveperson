@@ -34,9 +34,9 @@ func explode():
             if(colliding and colliding.has_method("hit")):
                 colliding.hit()
             
-            if(colliding.is_in_group("wall")):
+            if(!colliding.is_in_group("player")):
                 raycast.enabled = false
-                explosion_edge = colliding.position + GameSettings.TILE_SIZE/2
+                explosion_edge = raycast.get_collision_point()
                 break
                 
             raycast.add_exception(colliding)
@@ -48,6 +48,8 @@ func _on_Area2D_body_exited(_body):
     collider.set_deferred("disabled",false)
 
 func explosion_effect(from_position:Vector2, to_position:Vector2):
+    print(from_position)
+    print(to_position)
     var direction = from_position.direction_to(to_position)
     var explosion_position = from_position
 
