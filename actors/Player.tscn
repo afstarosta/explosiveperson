@@ -28,4 +28,5 @@ one_way_collision = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 4 )
 animation = "i_front"
+frame = 1
 playing = true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/farm_tileset.png-dc2cdbf109890c8ccd6ed68613b5e650.stex"
+path="res://.import/eggs_spritesheet.png-2ce5d3b9d5d256ed191bbf944a823f40.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/farm_tileset.png"
-dest_files=[ "res://.import/farm_tileset.png-dc2cdbf109890c8ccd6ed68613b5e650.stex" ]
+source_file="res://sprites/eggs_spritesheet.png"
+dest_files=[ "res://.import/eggs_spritesheet.png-2ce5d3b9d5d256ed191bbf944a823f40.stex" ]
 
 [params]
 

@@ -18,7 +18,8 @@ func _ready():
     
 func _physics_process(delta):
     timer += delta
-
+    $progress.value = (timer/bomb_duration) * 100
+    
     if(timer >= bomb_duration):
         explode()
         queue_free()
