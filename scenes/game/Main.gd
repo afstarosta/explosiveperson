@@ -27,6 +27,7 @@ func start_match(players):
     lobby_screen.queue_free()
     level = level_scene.instance()
     add_child(level)
+    yield(level, "level_ready")
     
     for player_slot in range(len(players)):
         var spawn_points = level.get_spawn_points()
