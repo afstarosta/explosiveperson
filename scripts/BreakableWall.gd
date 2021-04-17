@@ -11,12 +11,12 @@ func hit():
     queue_free()
 
 func spawn_powerup():
-    #if randf() > .8:
-    if true:
+    randomize()
+    if randf() <= .8:
         var powerup:StaticBody2D = powerup_scene.instance()
     
         powerup.position.x = (cell_coord.x * GameSettings.TILE_SIZE.x) + GameSettings.TILE_SIZE.x/2
         powerup.position.y = (cell_coord.y * GameSettings.TILE_SIZE.y) + GameSettings.TILE_SIZE.y/2
         
-        powerup.init(powerup.powerup_types.MOVESPEED)
+        powerup.init()
         GameSettings.powerup_container.add_child(powerup)

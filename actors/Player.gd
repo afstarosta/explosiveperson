@@ -13,6 +13,7 @@ func deactivate():
     active = false
 
 func hit():
+    print("hit")
     stats.lives -= 1
     if stats.lives <= 0:
         $AnimatedSprite.animation = "dead"
