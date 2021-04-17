@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://actors/MovementController.gd" type="Script" id=2]
 [ext_resource path="res://actors/BombController.gd" type="Script" id=3]
 [ext_resource path="res://sprites/player_anim.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://actors/Stats.gd" type="Script" id=5]
+[ext_resource path="res://actors/powerupCollector.gd" type="Script" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 27.3763
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 13.7493, 13.7242 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -29,3 +34,15 @@ one_way_collision = true
 frames = ExtResource( 4 )
 animation = "i_front"
 playing = true
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="powerupCollector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="powerupCollector"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="powerupCollector" to="powerupCollector" method="_on_powerupCollector_body_entered"]

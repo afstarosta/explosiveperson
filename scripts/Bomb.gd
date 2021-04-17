@@ -10,7 +10,8 @@ var power = 2
 
 onready var raycasts = get_node("raycasts").get_children()
 
-func _ready():
+func init(bomb_power):
+    power = bomb_power
     explosionController = get_node("/root/Main/explosionController")
 
     for raycast in raycasts:

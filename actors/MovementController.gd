@@ -25,7 +25,7 @@ func handle_movement():
         velocity.x = 1
         direction = "right"
             
-    parent.move_and_slide(velocity * speed)
+    parent.move_and_slide(velocity * parent.stats.move_speed)
     set_animation(velocity)
 
 func set_animation(velocity: Vector2):

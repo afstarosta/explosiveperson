@@ -16,6 +16,7 @@ var level
 
 func _ready():
     start_screen = start_screen_scene.instance()
+    GameSettings.powerup_container = $powerupContainer
     add_child(start_screen)
 
 func start_game():
@@ -23,7 +24,7 @@ func start_game():
     lobby_screen = lobby_screen_scene.instance()
     add_child(lobby_screen)
 
-func start_match(players):    
+func start_match(players):
     lobby_screen.queue_free()
     level = level_scene.instance()
     add_child(level)
