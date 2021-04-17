@@ -9,3 +9,5 @@ script = ExtResource( 2 )
 [node name="explosionController" parent="." instance=ExtResource( 3 )]
 
 [node name="Players" type="Node2D" parent="."]
+
+[node name="powerupContainer" type="Node2D" parent="."]
