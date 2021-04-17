@@ -19,7 +19,7 @@ func set_player_ready_box(index: int, player_device: int):
     player_box.player_device_id = player_device
 
 func should_start_game():
-    return len(players) > 1 and are_all_players_ready()
+    return len(players) > 0 and are_all_players_ready()
 
 func are_all_players_ready():
     var player_boxes = $PlayerBoxes.get_children()
